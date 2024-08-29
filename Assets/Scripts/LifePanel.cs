@@ -7,6 +7,7 @@ public class LifePanel : MonoBehaviour
     public GameObject[] icons;
     public void UpdateLife(int life)
     {
+        //ライフに応じてライフアイコンを表示・非表示にする
         for (int i = 0; i < icons.Length; i++)
         {
             if (i < life) icons[i].SetActive(true);

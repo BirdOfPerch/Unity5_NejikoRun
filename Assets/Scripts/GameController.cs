@@ -13,11 +13,14 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
+        //スコアの表示
         int score = CalcScore();
         scoreText.text = "Score :" + score + "m";
 
+        //キャラクターのLifeとUIのLifeを連携させる
         lifePanel.UpdateLife(nejiko.Life());
 
+        //キャラクターのLifeが0になったらタイトルに戻される
         if (nejiko.Life() <= 0)
         {
             enabled = false;
@@ -33,6 +36,7 @@ public class GameController : MonoBehaviour
 
     void ReturnToTitle()
     {
+        //LoadSceneでタイトルへ
         SceneManager.LoadScene("Title");
     }
 }
